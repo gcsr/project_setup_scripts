@@ -111,7 +111,7 @@ echo [CMD] Writing starter Python package markers...
 > "src\%MODULE_NAME%\__init__.py" echo __version__ = "0.1.0"
 type NUL > "tests\__init__.py"
 
-echo [CMD] Writing README.md with build, import, and usage instructions...
+echo [CMD] Writing README.md with build, verification, export, and integration guides...
 > README.md echo # %RAW_PROJECT_NAME%
 >> README.md echo.
 >> README.md echo A modular Python library using the standard `src/` layout.
@@ -140,7 +140,16 @@ echo [CMD] Writing README.md with build, import, and usage instructions...
 >> README.md echo.
 >> README.md echo ---
 >> README.md echo.
->> README.md echo ## 3. How Other Projects Can Use This Library
+>> README.md echo ## 3. Verifying the Build
+>> README.md echo.
+>> README.md echo Validate package metadata and distribution file integrity:
+>> README.md echo ```cmd
+>> README.md echo python -m twine check dist/*
+>> README.md echo ```
+>> README.md echo.
+>> README.md echo ---
+>> README.md echo.
+>> README.md echo ## 4. How Other Projects Can Use This Library
 >> README.md echo.
 >> README.md echo ### Option A: Direct Local Path (Best for active development)
 >> README.md echo In your consumer application's virtual environment:
@@ -161,9 +170,14 @@ echo [CMD] Writing README.md with build, import, and usage instructions...
 >> README.md echo ]
 >> README.md echo ```
 >> README.md echo.
+>> README.md echo ### Option D: Referencing in Consumer `requirements.txt`
+>> README.md echo ```text
+>> README.md echo -e ./path/to/%RAW_PROJECT_NAME%
+>> README.md echo ```
+>> README.md echo.
 >> README.md echo ---
 >> README.md echo.
->> README.md echo ## 4. Importing and Using in Python Code
+>> README.md echo ## 5. Importing and Using in Python Code
 >> README.md echo.
 >> README.md echo ```python
 >> README.md echo import %MODULE_NAME%
