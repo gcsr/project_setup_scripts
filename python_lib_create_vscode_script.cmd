@@ -418,6 +418,12 @@ if errorlevel 1 goto :ON_ERROR
 call :CREATE_VENV
 if errorlevel 1 goto :ON_ERROR
 
+:: --- Pip-Specific Commands ---
+call :UPGRADE_PIP_TOOLS
+if errorlevel 1 goto :ON_ERROR
+
+call :INSTALL_EDITABLE
+if errorlevel 1 goto :ON_ERROR
 
 :: --- Git-Specific Commands ---
 call :INIT_GIT_REPO
